@@ -13,7 +13,7 @@ const MENU_DESC_EN = {
   'Talomaitotee, pehmeä ja kermainen.': 'House milk tea, smooth and creamy.',
   'Suklaamaitotee ja tapioka.': 'Chocolate milk tea and tapioca.',
   'Matcha-maidotee, mochi-tyylinen makeus.': 'Matcha milk tea with mochi-style sweetness.',
-  'Klassinen maitotee ja chewy pearls.': 'Classic milk tea and chewy pearls.',
+  'Klassinen maitotee ja purukypsät tapioka-helmet.': 'Classic milk tea and chewy pearls.',
   'Maitotee ja kookoshyytelö.': 'Milk tea and coconut jelly.',
   'Taromaitotee ja boba-helmet.': 'Taro milk tea and boba pearls.',
   'Pistaasimaito ja pehmeä makeus.': 'Pistachio milk and gentle sweetness.',
