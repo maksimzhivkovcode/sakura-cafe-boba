@@ -18,35 +18,7 @@
   initMenuTabs();
   initLanguageSwitch();
   initHeaderNav();
-  initIllustrationLabels();
 })();
-
-function initIllustrationLabels() {
-  const mediaBlocks = document.querySelectorAll('.menu-card__media--illus');
-
-  mediaBlocks.forEach((block) => {
-    const lang = document.documentElement.lang === 'en' ? 'en' : 'fi';
-    const label =
-      lang === 'en'
-        ? 'Illustration — not an actual dish photo'
-        : 'Kuvitus — ei annoskuva';
-    block.setAttribute('data-illus-label', label);
-  });
-
-  document.addEventListener('sakura:langchange', (event) => {
-    const activeLang =
-      event.detail && event.detail.lang === 'en' ? 'en' : 'fi';
-
-    document.querySelectorAll('.menu-card__media--illus').forEach((block) => {
-      block.setAttribute(
-        'data-illus-label',
-        activeLang === 'en'
-          ? 'Illustration — not an actual dish photo'
-          : 'Kuvitus — ei annoskuva'
-      );
-    });
-  });
-}
 
 function initHeaderNav() {
   const header = document.querySelector('[data-header]');
