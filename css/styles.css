@@ -488,14 +488,14 @@ section[id] {
 }
 
 .button--secondary {
-  background: linear-gradient(160deg, #eef8f1 0%, var(--accent-mint) 100%);
+  background: linear-gradient(160deg, var(--accent-mint) 0%, #b8dcc8 100%);
   border-color: var(--accent-boba);
   color: var(--accent-boba);
   box-shadow: none;
 }
 
 .button--secondary:hover {
-  background: linear-gradient(160deg, var(--accent-mint) 0%, #b8dcc8 100%);
+  background: linear-gradient(160deg, #b8dcc8 0%, #a3c9b3 100%);
   border-color: var(--primary-sakura-dark);
   color: var(--text-primary);
   transform: translateY(-2px);
