@@ -26,6 +26,7 @@
   --radius-card: 16px;
   --radius-lg: 1.5rem;
   --scroll-padding-offset: 5rem;
+  --header-mobile-bar: 3.625rem;
 }
 
 *,
@@ -377,8 +378,19 @@ section[id] {
 
 /* Hero */
 .hero {
+  position: relative;
   padding-block: var(--space-xl) var(--space-lg);
   background: linear-gradient(165deg, var(--bg-light) 0%, #ffeef2 45%, var(--accent-mint) 100%);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 2.75rem;
+  background: linear-gradient(to bottom, transparent 0%, var(--bg-card) 100%);
+  pointer-events: none;
 }
 
 .hero__badge {
@@ -438,7 +450,16 @@ section[id] {
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
   gap: var(--space-sm);
+}
+
+.hero__actions .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  min-height: 2.75rem;
 }
 
 .button {
@@ -457,6 +478,7 @@ section[id] {
 .button--primary {
   background: var(--primary-sakura);
   color: var(--text-primary);
+  border-color: var(--primary-sakura);
 }
 
 .button--primary:hover {
@@ -466,13 +488,17 @@ section[id] {
 }
 
 .button--secondary {
-  background: transparent;
-  border-color: var(--primary-sakura);
+  background: linear-gradient(160deg, #eef8f1 0%, var(--accent-mint) 100%);
+  border-color: var(--accent-boba);
   color: var(--accent-boba);
+  box-shadow: none;
 }
 
 .button--secondary:hover {
-  background: var(--bg-card);
+  background: linear-gradient(160deg, var(--accent-mint) 0%, #b8dcc8 100%);
+  border-color: var(--primary-sakura-dark);
+  color: var(--text-primary);
+  transform: translateY(-2px);
 }
 
 .button:focus-visible,
@@ -1326,18 +1352,31 @@ section[id] {
 }
 
 @media (max-width: 767px) {
+  /* Fixed to viewport — menu, language and logo always reachable while scrolling */
   .header {
-    position: relative;
-    top: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .header + #main {
+    padding-top: var(--header-mobile-bar);
+  }
+
+  .hero {
+    padding-top: var(--space-sm);
   }
 
   html {
-    scroll-padding-top: 1rem;
+    scroll-padding-top: var(--header-mobile-bar);
   }
 
   #main,
   section[id] {
-    scroll-margin-top: 1rem;
+    scroll-margin-top: var(--header-mobile-bar);
   }
 }
 
