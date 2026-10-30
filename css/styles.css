@@ -868,6 +868,78 @@ section[id] {
   line-height: 1.5;
 }
 
+/* Menu cards — compact on narrow viewports */
+@media (max-width: 479px) {
+  .menu__grid {
+    gap: 0.625rem;
+  }
+
+  .menu-card {
+    border-radius: 14px;
+  }
+
+  .menu-card__media {
+    border-radius: 12px 12px 0 0;
+  }
+
+  .menu-card__body {
+    padding: 0.75rem 0.65rem 0.85rem;
+    gap: 0.25rem;
+  }
+
+  .menu-card__title {
+    font-size: 0.9375rem;
+    line-height: 1.28;
+  }
+
+  .menu-card__desc {
+    font-size: 0.8125rem;
+    line-height: 1.45;
+  }
+
+  .menu-card__price {
+    right: 0.45rem;
+    bottom: 0.45rem;
+    padding: 0.28rem 0.5rem;
+    font-size: 0.6875rem;
+    line-height: 1.2;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 479px) {
+  .menu__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .menu-card__body {
+    padding: 0.625rem 0.5rem 0.75rem;
+  }
+
+  .menu-card__title {
+    font-size: 0.875rem;
+  }
+
+  .menu-card__desc {
+    font-size: 0.78125rem;
+  }
+
+  .menu-card__price {
+    right: 0.35rem;
+    bottom: 0.35rem;
+    max-width: calc(100% - 0.7rem);
+    padding: 0.25rem 0.45rem;
+    font-size: 0.6875rem;
+    line-height: 1.15;
+    text-align: center;
+  }
+}
+
+@media (max-width: 359px) {
+  .menu__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 /* About */
 .about {
   padding-block: var(--space-lg);
