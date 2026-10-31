@@ -142,6 +142,24 @@ function initLanguageSwitch() {
       }
     }
 
+    const headerNav = document.querySelector('.header__nav');
+
+    if (headerNav) {
+      const navLabel = headerNav.getAttribute(`data-${activeLang}-label`);
+
+      if (navLabel) {
+        headerNav.setAttribute('aria-label', navLabel);
+      }
+    }
+
+    document.querySelectorAll('[data-fi-alt][data-en-alt]').forEach((element) => {
+      const alt = element.getAttribute(`data-${activeLang}-alt`);
+
+      if (alt !== null) {
+        element.setAttribute('alt', alt);
+      }
+    });
+
     buttons.forEach((button) => {
       const isActive = button.getAttribute('data-lang') === activeLang;
       button.classList.toggle('lang-switch__btn--active', isActive);
@@ -184,6 +202,12 @@ function initLanguageSwitch() {
     const label = tablist && tablist.getAttribute('data-fi-label');
     if (tablist && label) {
       tablist.setAttribute('aria-label', label);
+    }
+
+    const headerNav = document.querySelector('.header__nav');
+    const navLabel = headerNav && headerNav.getAttribute('data-fi-label');
+    if (headerNav && navLabel) {
+      headerNav.setAttribute('aria-label', navLabel);
     }
   }
 

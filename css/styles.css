@@ -528,7 +528,7 @@ section[id] {
 .button--secondary {
   background: linear-gradient(160deg, var(--accent-mint) 0%, #b8dcc8 100%);
   border-color: var(--accent-boba);
-  color: var(--accent-boba);
+  color: var(--text-primary);
   box-shadow: none;
 }
 
@@ -1554,6 +1554,17 @@ section[id] {
   .about__gallery-item:hover .about__figure,
   .about__gallery-item:hover .about__image,
   .reviews__card:hover {
+    transform: none;
+  }
+
+  .header__toggle,
+  .lang-switch__btn,
+  .header__social-link {
+    transition: none;
+  }
+
+  .header__toggle:hover,
+  .header__social-link:hover {
     transform: none;
   }
 }
