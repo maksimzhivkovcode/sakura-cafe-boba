@@ -41,6 +41,8 @@ html {
   scroll-padding-top: var(--scroll-padding-offset);
   max-width: 100%;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
 }
 
 body {
@@ -73,12 +75,16 @@ ul {
 button {
   font: inherit;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
 }
 
 a {
   color: var(--accent-boba);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.15em;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
 }
 
 a:hover {
